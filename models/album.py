@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class album(models.Model):
     _name = "odoo_musica.album" # IMPORTANTE é o nome que vai ter a táboa
     _description = "Albumes"
-    _sql_constraints = [('nome unico', 'unique(name)', 'O Nome do Album. Non se pode repetir')]
+    _sql_constraints = [('nome_unico', 'unique(name)', 'O Nome do Album. Non se pode repetir')]
 
     name = fields.Char(required=True, size=30,string="Álbum")  # IMPORTANTE o campo ten que chamarse name para visualizalo
     cancion_ids = fields.Many2many("odoo_musica.cancion", string="Cancións do Álbum",
